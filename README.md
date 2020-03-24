@@ -1,24 +1,17 @@
-# README
+# Collaboration Station - Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Project created using Ruby v2.6.1
 
-Things you may want to cover:
+You can install Ruby [here](https://www.ruby-lang.org/en/documentation/installation/) and Rails [here](https://guides.rubyonrails.org/v5.0/getting_started.html) before starting, as you will need both of these. This is a Ruby-on-Rails backend.
 
-* Ruby version
+### Installation instructions
 
-* System dependencies
+- Fork and clone this repository into a place specified by you
 
-* Configuration
+- Navigate into that directory using your terminal
 
-* Database creation
+- Run `bundle install` to install dependencies
 
-* Database initialization
+- Run `rails s` to run the Rails server. It will start on http://localhost:3000/ by default, and this is the port I used.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Navigate to the [frontend directory]() and run that as well.
