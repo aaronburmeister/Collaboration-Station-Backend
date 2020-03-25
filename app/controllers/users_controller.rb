@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
-    before_action: :authenticate, only: [:delete, :update]
+    before_action :authenticate, only: [:delete, :update]
 
     def index
         @users = User.all
 
-        render json: @users
+        render json: { users: @users }
     end
 
     def show
         @user = User.find(params[:id])
 
-        render json: @user
+        render json: { user: @user }
     end
 
     def create
@@ -18,16 +18,16 @@ class UsersController < ApplicationController
 
         if @user.valid?
             @user.save
-            render json: @user
+            render json: { user: @user }
         else
-            render json: status: :unauthorized
+            render json: @user.errors.messages
         end
     end
 
     def update
         @user = User.update(params[:id], user_params)
 
-        render json: @user
+        render json: user: @user
     end
 
     def delete
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
         @user.destroy
 
-        render json: message: "User successfully deleted!"
+        render json: { message: "User successfully deleted!" }
     end
 
     private
