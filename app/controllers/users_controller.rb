@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action: :authenticate, only: :delete
+    before_action: :authenticate, only: [:delete, :update]
 
     def index
         @users = User.all
@@ -24,6 +24,12 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        @user = User.update(params[:id], user_params)
+
+        render json: @user
+    end
+
     def delete
         @user = User.find(params[:id])
 
@@ -35,12 +41,12 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit({
-            username: params[:username],
-            password: params[:password],
-            email: params[:email],
-            isArtist: params[:isArtist]
-        })
+        params.require(:user).permit(
+            :username,
+            :password,
+            :email,
+            :isArtist
+        )
     end
 
 end
