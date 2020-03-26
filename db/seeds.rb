@@ -18,8 +18,8 @@ miwha = User.create(username: "mischievous-miwha", password: "designgod", email:
 
 # Requests
 Request.create(user: mike, title: "Red Dragonborn Artificer", description: "My red dragonborn is very strong and wears a black cloak to conceal a scar on his face. He should be positioned standing on top of a small pile of dead goblins that he has recently killed, holding one of his creations in his hand triumphantly in the air.", status: "Open")
-Request.create(user: shadowblade, title: "Mountain Dwarf Samurai - Angus Precisword", description: "While the other dwarves studied bleak stone, my dwarf mastered the art of the blade. He wears a metallic fedora and dual-wields katanas crafted with the blood of an ancient dragon and the Demon Lord Orcus.", status: "Open")
-Request.create(user: corey, title: "Human Cowboy - Michael Nimbus", description: "Michael is a man from the future stuck in the Wild West. He's converted his laser handguns to look like old-timey revolvers to avoid suspicion. Anyone who has seen the guns fire doesn't live to tell the tale.", status: "Open")
+Request.create(user: shadowblade, title: "Mountain Dwarf Samurai - Angus Precisword", description: "While the other dwarves studied bleak stone, my dwarf mastered the art of the blade. He wears a metallic fedora and dual-wields katanas crafted with the blood of an ancient dragon and the Demon Lord Orcus.", status: "Booked")
+Request.create(user: corey, title: "Human Cowboy - Michael Nimbus", description: "Michael is a man from the future stuck in the Wild West. He's converted his laser handguns to look like old-timey revolvers to avoid suspicion. Anyone who has seen the guns fire doesn't live to tell the tale.", status: "Completed")
 Request.create(user: adam, title: "Gnome Grandma", description: "Just looking for a quick sketch of an npc from my campaign - I'd like her to have a custom token because the characters have gotten very attached to her.", status: "Open")
 
 # Artist Image Portfolios
