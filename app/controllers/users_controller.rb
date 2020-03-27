@@ -2,7 +2,11 @@ class UsersController < ApplicationController
     before_action :authenticate, only: [:delete, :update]
 
     def index
-        @users = User.all
+        if params[:filter]
+            @users = User.all.where(params[:filter].permit(:isArtist))
+        else
+            @users = User.all
+        end
 
         render json: { users: @users }
     end
