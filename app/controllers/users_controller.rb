@@ -8,13 +8,13 @@ class UsersController < ApplicationController
             @users = User.all
         end
 
-        render json: { users: @users }
+        render json: { users: @users }, include: [:images, :requests]
     end
 
     def show
         @user = User.find(params[:id])
 
-        render json: { user: @user }
+        render json: { user: @user }, include: [:images, :requests]
     end
 
     def create
