@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authenticate, only: [:delete, :update]
+    before_action :authenticate, only: [:destroy, :update]
 
     def index
         if params[:filter]
@@ -29,17 +29,25 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = User.update(params[:id], user_params)
-
-        render json: { user: @user }
+        # You can only update your own account
+        # @user found from token
+        if params[:id].to_i == @user.id
+            @user = User.update(@user.id, user_params)
+            render json: { user: @user }
+        else
+            render json: { error: "You can only update your own profile"}
+        end
     end
 
-    def delete
-        @user = User.find(params[:id])
-
-        @user.destroy
-
-        render json: { message: "User successfully deleted!" }
+    def destroy
+        # You can only delete your own account
+        # @user found form token
+        if params[:id].to_i == @user.id
+            @user.destroy
+            render json: { message: "User successfully deleted!" }
+        else
+            render json: { error: "You can only delete your own profile"}
+        end
     end
 
     private
