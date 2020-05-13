@@ -9,7 +9,11 @@ class ApplicationController < ActionController::API
             secret = Rails.application.secret_key_base
             begin
                 payload = JWT.decode(token, secret)[0]
-                @user = User.find(payload['id'])
+                if payload['exp'] > Time.new.to_i
+                    @user = User.find(payload['id'])
+                else
+                    render json: { message: "Please Log In again"}, status: :unauthorized
+                end
             rescue
                 render json: { message: "Authentication Failure" }, status: :unauthorized
             end
