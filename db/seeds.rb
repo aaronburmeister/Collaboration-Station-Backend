@@ -9,7 +9,7 @@ User.destroy_all
 corey = User.create(username: "corey-the-cowboy", password: "imacowboy", email: "contact@coreyhodge.net", isArtist: false)
 shadowblade = User.create(username: "xX ShadowBlade69 Xx", password: "artoftheblade", email: "contact@artoftheblade.net", isArtist: false)
 mike = User.create(username: "mike-the-new-man", password: "ropemaster", email: "contact@michaelnewman.net", isArtist: false)
-adam = User.create(username: "The Shapster", password: "notmyfirstrodeo", email: "contact@becauseimshappy.net", isArtist: false)
+adam = User.create(username: "TheShapster", password: "notmyfirstrodeo", email: "contact@becauseimshappy.net", isArtist: false)
 
 # Artists
 jorge = User.create(username: "jazzy-jorge", password: "theyoungone", email: "contact@ibrokemycomputer.net", isArtist: true)
